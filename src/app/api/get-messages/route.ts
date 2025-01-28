@@ -83,6 +83,7 @@ import { getServerSession } from 'next-auth/next';
 import { authOptions } from '../auth/[...nextauth]/options';
 
 export async function GET(request: Request) {
+  console.log(request)
   await dbConnect();
   const session = await getServerSession(authOptions);
   const _user: User = session?.user;
